@@ -22,6 +22,9 @@ const theme: Theme = {
     large: "32px",
     extraLarge: "64px",
   },
+  elements: {
+    navigationHeight: "100px",
+  },
 };
 
 export { theme };

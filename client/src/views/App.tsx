@@ -4,39 +4,9 @@ import { NavigationBar } from "../components/organisms/Navigation/NavigationBar"
 import { AppWrapper } from "./App.styles";
 import { Route, Routes } from "react-router-dom";
 import { LandingPage } from "./LandingPage/LandingPage";
+import { ExplorePage } from "./ExplorePage/ExplorePage";
 
 const App = () => {
-  const [count, setCount] = useState(0);
-
-  const data = [
-    {
-      name: "Adam",
-      age: 28,
-      group: "Sem I / Group B",
-    },
-    {
-      name: "Roman",
-      age: 30,
-      group: "Sem III / Group C",
-    },
-    {
-      name: "Ania",
-      age: 27,
-      group: "Sem I / Group A",
-    },
-    {
-      name: "Karol",
-      age: 31,
-      group: "Sem IV / Group A",
-    },
-  ];
-
-  const StyledDiv = styled.div`
-    background-color: ${({ theme }) => theme.colors.red};
-    border: 1px solid white;
-    border-radius: 16px;
-  `;
-
   return (
     <>
       <AppWrapper>
@@ -51,6 +21,7 @@ const App = () => {
               </>
             }
           />
+          <Route path="/explore" element={<ExplorePage />} />
         </Routes>
       </AppWrapper>
     </>

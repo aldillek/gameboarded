@@ -79,7 +79,7 @@ export const NavigationRouting = () => {
         Set to auth
       </NavigationRoutingItem>
       <NavigationRoutingItem>
-        <NavigationRoutingLink to="test">explore</NavigationRoutingLink>
+        <NavigationRoutingLink to="/explore">explore</NavigationRoutingLink>
       </NavigationRoutingItem>
       <NavigationRoutingItem onClick={loginOpenModal}>
         sign in

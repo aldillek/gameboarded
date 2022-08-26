@@ -25,5 +25,8 @@ declare module "styled-components" {
       large: string;
       extraLarge: string;
     };
+    elements: {
+      navigationHeight: string;
+    };
   }
 }
