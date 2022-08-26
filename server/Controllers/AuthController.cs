@@ -35,7 +35,7 @@ namespace server.Controllers
         public ActionResult GetInfoAboutMe()
         {
 
-            var data = User.Claims.Where(claimType => claimType.Type == "userData").First().Value;
+            var data = User.Claims.Where(claimType => claimType.Type == ClaimTypes.Role).First().Value;
             //if(informationsAboutUser == null)
             //{
             //    return NotFound();

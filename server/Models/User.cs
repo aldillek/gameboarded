@@ -11,6 +11,8 @@ namespace server.Models
         public string? Password { get; set; }
         [Required]
         public string? CreatedOn { get; set; }
+        [Required]
+        public Roles Role { get; set; }
 
     }
 
@@ -20,4 +22,15 @@ namespace server.Models
         public string? Email { get; set; }
         public string? Password { get; set; }
     }
+
+
+    public enum Roles
+    {
+        User,
+        Moderator,
+        Admin
+    }
+
+            
+    
 }

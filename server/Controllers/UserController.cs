@@ -90,10 +90,10 @@ namespace server.Controllers
           {
               return Problem("Entity set 'DatabaseContext.Users'  is null.");
           }
-            var newUser = _context.Users.Add(new User { Email = user.Email, Password = user.Password, CreatedOn= DateTime.UtcNow.ToString()});
+            var newUser = _context.Users.Add(new User { Email = user.Email, Password = user.Password, CreatedOn= DateTime.UtcNow.ToString(), Role = Roles.User});
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = newUser.Entity.Id }, user);
+            return CreatedAtAction("GetUser", new { id = newUser.Entity.Id }, newUser.Entity);
         }
 
         // DELETE: api/User/5

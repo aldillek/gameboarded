@@ -22,10 +22,10 @@ namespace server.Services.AuthService
 
         public string CreateToken(User user)
         {
-            List<Claim> claims = new List<Claim>
+            List<Claim> claims = new()
             {
-                new Claim("userData", JsonSerializer.Serialize(new {Id =  user.Id, Email = user.Email})),
-                new Claim(ClaimTypes.Name, user.Email),
+                new Claim("userData", JsonSerializer.Serialize(new {user.Id, user.Email})),
+                new Claim(ClaimTypes.Role, StringFromRole(user.Role))
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("JWT").Value));
@@ -56,6 +56,17 @@ namespace server.Services.AuthService
             return token;
 
         }
+
+
+
+        public static string StringFromRole(Roles role) =>
+         role switch
+         {
+             Roles.User => "User",
+             Roles.Moderator => "Moderator",
+             Roles.Admin => "Admin",
+             _ => "Invalid"
+         };
 
     }
 
