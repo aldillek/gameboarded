@@ -8,6 +8,7 @@ namespace server.Database
 
        
         public DbSet<User> Users { get; set; }
+        public DbSet<Game> Games { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
