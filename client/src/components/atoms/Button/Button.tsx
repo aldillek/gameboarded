@@ -1,9 +1,10 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import styled from "styled-components";
 
 interface ButtonProps {
-  isBig: boolean;
-  isDark: boolean;
+  isBig?: boolean;
+  isDark?: boolean;
+  onClick: any;
 }
 
 export const Button = styled.button<ButtonProps>`
