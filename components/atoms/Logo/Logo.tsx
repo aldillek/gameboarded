@@ -1,25 +1,23 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import LogoImage from "../../../assets/images/logo.svg?component";
+import Link from 'next/link'
+import styled from 'styled-components'
+import Image from 'next/image'
 
 const LogoWrapper = styled(Link)`
-  width: 120px;
-  height: inherit;
-  display: grid;
-  place-items: center;
-  svg {
-    height: 64px;
-  }
-`;
+	width: 120px;
+	height: inherit;
+	display: grid;
+	position: relative;
+	place-items: center;
+	img {
+		background-color: white;
+		height: 64px;
+	}
+`
 
-interface LogoProps {
-  isWhite: boolean;
+export const Logo = () => {
+	return (
+		<LogoWrapper href="/">
+			<Image fill src="/logo.svg" alt="Logo" />
+		</LogoWrapper>
+	)
 }
-
-export const Logo = ({ isWhite }: LogoProps) => {
-  return (
-    <LogoWrapper to="/">
-      <LogoImage fill={isWhite ? "white" : "black"} />
-    </LogoWrapper>
-  );
-};
